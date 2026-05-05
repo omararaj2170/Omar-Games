@@ -3,27 +3,37 @@ const toggle = document.getElementById('toggle');
 const gate = document.getElementById('audioGate');
 const startAudio = document.getElementById('startAudio');
 
-// Put your own music file in games/music and set this path.
-bgm.src = 'music/theme.mp3';
+// Default track in games/music/
+bgm.src = 'music/1.mp3';
 bgm.volume = 0.45;
 
-async function unlockAndPlay() {
+async function tryPlayMusic() {
   try {
     await bgm.play();
     gate.classList.add('hidden');
+    removeUnlockListeners();
   } catch {
     gate.classList.remove('hidden');
   }
 }
 
-unlockAndPlay();
-
-function startFromInteraction() {
-  unlockAndPlay();
+function removeUnlockListeners() {
+  document.removeEventListener('pointerdown', onFirstInteraction);
+  document.removeEventListener('keydown', onFirstInteraction);
+  startAudio.removeEventListener('click', onFirstInteraction);
 }
 
-document.addEventListener('click', startFromInteraction, { once: true });
-startAudio.addEventListener('click', startFromInteraction);
+function onFirstInteraction() {
+  tryPlayMusic();
+}
+
+// Attempt autoplay first.
+tryPlayMusic();
+
+// Fallback for browsers that block autoplay until user gesture.
+document.addEventListener('pointerdown', onFirstInteraction);
+document.addEventListener('keydown', onFirstInteraction);
+startAudio.addEventListener('click', onFirstInteraction);
 
 toggle.addEventListener('click', () => {
   bgm.muted = !bgm.muted;
