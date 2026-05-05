@@ -1,0 +1,59 @@
+{
+  "word_api": "https://random-word-api.herokuapp.com/word?length=5",
+  "games": [
+    {
+      "name": "wordle",
+      "image": "games/wordle/image.svg",
+      "needs_word": true,
+      "word": "apple",
+      "word_api": "https://random-word-api.herokuapp.com/word?length=5"
+    },
+    {
+      "name": "snake",
+      "image": "games/snake/image.svg",
+      "needs_word": false
+    },
+    {
+      "name": "tic-tac-toe",
+      "image": "games/tic-tac-toe/image.svg",
+      "needs_word": false
+    },
+    {
+      "name": "hangman",
+      "image": "games/hangman/image.svg",
+      "needs_word": true,
+      "word": "brave",
+      "word_api": "https://random-word-api.herokuapp.com/word?length=5"
+    },
+    {
+      "name": "minesweeper",
+      "image": "games/minesweeper/image.svg",
+      "needs_word": false
+    },
+    {
+      "name": "pong",
+      "image": "games/pong/image.svg",
+      "needs_word": false
+    },
+    {
+      "name": "sudoku",
+      "image": "games/sudoku/image.svg",
+      "needs_word": false
+    },
+    {
+      "name": "tetris",
+      "image": "games/tetris/image.svg",
+      "needs_word": false
+    },
+    {
+      "name": "flappy-bird",
+      "image": "games/flappy-bird/image.svg",
+      "needs_word": false
+    },
+    {
+      "name": "memory-match",
+      "image": "games/memory-match/image.svg",
+      "needs_word": false
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Omar Games</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="container">
+      <h1>Omar Games</h1>
+      <p class="subtitle">10 mini game ideas with images. Word games pull 5-letter words from API.</p>
+      <section id="games" class="games-grid" aria-live="polite"></section>
+    </main>
+
+    <template id="game-card-template">
+      <article class="card">
+        <img class="thumb" alt="" />
+        <h2 class="name"></h2>
+        <p class="tag"></p>
+        <p class="word"></p>
+      </article>
+    </template>
+
+    <script src="app.js"></script>
+  </body>
+</html>
