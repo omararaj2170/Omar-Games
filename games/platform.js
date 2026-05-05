@@ -1,0 +1,1 @@
+const bgm=document.getElementById("bgm");const b=document.getElementById("toggle");b.onclick=()=>{bgm.muted=!bgm.muted};document.body.addEventListener('click',()=>bgm.play().catch(()=>{}),{once:true});
