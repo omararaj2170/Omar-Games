@@ -1,0 +1,1 @@
+let pts=0;function spawn(){const d=document.createElement('button');d.textContent='★';d.style.fontSize='28px';d.onclick=()=>{pts++;score.textContent='Score: '+pts;d.remove();};game.appendChild(d);setTimeout(()=>d.remove(),1200);}setInterval(spawn,900);score.textContent='Catch stars';reset.onclick=()=>{pts=0;game.innerHTML='';score.textContent='Score: 0';};

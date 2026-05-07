@@ -1,0 +1,1 @@
+let target=Math.random();game.innerHTML='<input id=v type=range min=0 max=100><button id=s>Stop</button>';let run=true,cur=0;const tm=setInterval(()=>{if(run){cur=(cur+3)%101;v.value=cur;score.textContent='Stop near 50';}},60);s.onclick=()=>{run=false;score.textContent='Distance: '+Math.abs(50-cur)};reset.onclick=()=>{run=true;};

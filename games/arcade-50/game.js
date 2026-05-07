@@ -1,0 +1,1 @@
+let s=0;const sc=score,b=reset,g=game;g.innerHTML='<button id=t>Tap target</button>';const t=()=>document.getElementById('t');function draw(){sc.textContent='Score: '+s;t().onclick=()=>{s++;draw();};}b.onclick=()=>{s=0;draw();};draw();

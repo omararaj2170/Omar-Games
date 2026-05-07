@@ -1,0 +1,1 @@
+game.innerHTML='<div id=p style='width:40px;height:40px;background:#22d3ee;position:relative;'></div>';let y=0,v=0;setInterval(()=>{v+=1;y+=v;if(y>0){y=0;v=0;}p.style.transform=`translateY(${y}px)`;},30);onkeydown=e=>{if(e.code==='Space'&&y===0)v=-12};score.textContent='Press Space to jump';reset.onclick=()=>{y=0;v=0;};

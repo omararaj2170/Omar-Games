@@ -1,0 +1,1 @@
+let a=2,b=3;function q(){a=1+Math.floor(Math.random()*12);b=1+Math.floor(Math.random()*12);game.innerHTML=`<div>${a} + ${b} = <input id='r'></div><button id='c'>Check</button>`;c.onclick=()=>{score.textContent=(+r.value===a+b)?'Correct':'Nope';};}reset.onclick=q;q();

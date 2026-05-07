@@ -1,0 +1,1 @@
+let t=10,val=0,run=null;game.innerHTML='<button id=hit>+1</button>';hit.onclick=()=>val++;function tick(){score.textContent=`Count: ${val} | Time: ${t}`;if(t--<=0){clearInterval(run);score.textContent='Final: '+val;}}run=setInterval(tick,1000);tick();reset.onclick=()=>{t=10;val=0;clearInterval(run);run=setInterval(tick,1000);};
