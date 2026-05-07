@@ -1,36 +1,18 @@
 <!doctype html>
 <html>
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta charset='UTF-8' />
+    <meta name='viewport' content='width=device-width,initial-scale=1' />
     <title>Omar Games Platform</title>
-    <link rel="stylesheet" href="platform.css" />
-  </head>
+    <link rel='stylesheet' href='platform.css' />
+  <link rel="icon" href="favicon.ico" type="image/x-icon"></head>
   <body>
-    <div id="audioGate" class="audio-gate">
-      <button id="startAudio">🎵 Click anywhere to start music</button>
-    </div>
-
-    <main class="wrap">
+    <main class='wrap'>
       <h1>🎮 Omar Games Platform</h1>
-      <p>Choose a game. Each has its own HTML/CSS/JS.</p>
-      <p class="hint">Drop your own track inside <code>games/music/</code> and update <code>platform.js</code>.</p>
-      <button id="toggle">Mute / Unmute</button>
-      <section class="grid">
-        <a class="card" href="wordle/index.html"><img src="wordle/image.svg" alt="wordle"><h3>wordle</h3></a>
-        <a class="card" href="snake/index.html"><img src="snake/image.svg" alt="snake"><h3>snake</h3></a>
-        <a class="card" href="tic-tac-toe/index.html"><img src="tic-tac-toe/image.svg" alt="tic-tac-toe"><h3>tic-tac-toe</h3></a>
-        <a class="card" href="hangman/index.html"><img src="hangman/image.svg" alt="hangman"><h3>hangman</h3></a>
-        <a class="card" href="minesweeper/index.html"><img src="minesweeper/image.svg" alt="minesweeper"><h3>minesweeper</h3></a>
-        <a class="card" href="pong/index.html"><img src="pong/image.svg" alt="pong"><h3>pong</h3></a>
-        <a class="card" href="sudoku/index.html"><img src="sudoku/image.svg" alt="sudoku"><h3>sudoku</h3></a>
-        <a class="card" href="tetris/index.html"><img src="tetris/image.svg" alt="tetris"><h3>tetris</h3></a>
-        <a class="card" href="flappy-bird/index.html"><img src="flappy-bird/image.svg" alt="flappy-bird"><h3>flappy-bird</h3></a>
-        <a class="card" href="memory-match/index.html"><img src="memory-match/image.svg" alt="memory-match"><h3>memory-match</h3></a>
-      </section>
-      <audio id="bgm" loop autoplay preload="auto"></audio>
+      <p>Now with background music, improved UI, 50 extra games, fixed Tetris, and Dino Runner.</p>
+      <button id='toggle'>Mute / Unmute</button>
+      <section class='grid' id='grid'></section>
     </main>
-
-    <script src="platform.js"></script>
+    <script src='platform.js'></script>
   </body>
 </html>

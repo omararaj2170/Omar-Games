@@ -1,40 +1,12 @@
-const bgm = document.getElementById('bgm');
-const toggle = document.getElementById('toggle');
-const gate = document.getElementById('audioGate');
-const startAudio = document.getElementById('startAudio');
-
-// Default track in games/music/
-bgm.src = 'music/1.mp3';
-bgm.volume = 0.45;
-
-async function tryPlayMusic() {
-  try {
-    await bgm.play();
-    gate.classList.add('hidden');
-    removeUnlockListeners();
-  } catch {
-    gate.classList.remove('hidden');
-  }
+const base=['wordle','snake','tic-tac-toe','hangman','minesweeper','pong','sudoku','tetris','flappy-bird','memory-match','dino-runner'];
+for(let i=1;i<=50;i++) base.push(`arcade-${String(i).padStart(2,'0')}`);
+const grid=document.getElementById('grid');
+for(const name of base){
+  const a=document.createElement('a');a.className='card';a.href=`${name}/index.html`;
+  const img=(name.startsWith('arcade-'))?'snake/image.svg':`${name}/image.svg`;
+  a.innerHTML=`<img src='${img}' alt='${name}'><h3>${name}</h3>`;grid.appendChild(a);
 }
-
-function removeUnlockListeners() {
-  document.removeEventListener('pointerdown', onFirstInteraction);
-  document.removeEventListener('keydown', onFirstInteraction);
-  startAudio.removeEventListener('click', onFirstInteraction);
-}
-
-function onFirstInteraction() {
-  tryPlayMusic();
-}
-
-// Attempt autoplay first.
-tryPlayMusic();
-
-// Fallback for browsers that block autoplay until user gesture.
-document.addEventListener('pointerdown', onFirstInteraction);
-document.addEventListener('keydown', onFirstInteraction);
-startAudio.addEventListener('click', onFirstInteraction);
-
-toggle.addEventListener('click', () => {
-  bgm.muted = !bgm.muted;
-});
+const audio=new Audio('music/1.mp3');audio.loop=true;audio.volume=.35;
+const play=()=>audio.play().catch(()=>{});play();
+addEventListener('click',play,{once:true});addEventListener('keydown',play,{once:true});
+document.getElementById('toggle').onclick=()=>audio.muted=!audio.muted;
